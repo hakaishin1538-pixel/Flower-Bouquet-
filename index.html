@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pink Bouquet Surprises 🌸</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #ffe6f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #4a2c3d;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 450px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2);
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            border: 2px solid #ffb6c1;
+        }
+
+        .flower-icon {
+            font-size: 60px;
+            margin-bottom: 10px;
+            animation: bounce 2s infinite;
+        }
+
+        h2 {
+            color: #d81b60;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.5;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 105, 180, 0.4);
+        }
+
+        .btn:hover {
+            background-color: #ff1493;
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            background-color: #ffd1dc;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .page-counter {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 0.85rem;
+            color: #ff69b4;
+            font-weight: bold;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="page-counter" id="pageNumber">Page 1/10</div>
+        <div class="flower-icon" id="flowerIcon">💐</div>
+        <h2 id="pageTitle">A Special Pink Bouquet</h2>
+        <p id="pageText">I put together a special bouquet of 10 pages just for you. Ready to explore the surprises inside?</p>
+        <button class="btn" id="nextBtn" onclick="nextPage()">Open Next Surprise 🌸</button>
+    </div>
+
+    <script>
+        const pages = [
+            {
+                icon: "💐",
+                title: "Welcome to Your Bouquet",
+                text: "Every page in this digital bouquet holds a little surprise for you. Let's start picking the flowers!"
+            },
+            {
+                icon: "🌷",
+                title: "Page 1: Fresh Tulips",
+                text: "Surprise 1: Hope your day is as bright and full of energy as a fresh pink tulip!"
+            },
+            {
+                icon: "🌹",
+                title: "Page 2: A Sweet Rose",
+                text: "Surprise 2: Here's a reminder that you're truly appreciated and thought of today."
+            },
+            {
+                icon: "🌺",
+                title: "Page 3: Hibiscus Magic",
+                text: "Surprise 3: 'Happiness blooms from within.' Keep shining bright!"
+            },
+            {
+                icon: "🌸",
+                title: "Page 4: Cherry Blossoms",
+                text: "Surprise 4: A little virtual hug wrapped in soft pink cherry blossom petals."
+            },
+            {
+                icon: "💌",
+                title: "Page 5: A Secret Note",
+                text: "Surprise 5: Halfway through! You deserve all the good things coming your way."
+            },
+            {
+                icon: "🌼",
+                title: "Page 6: Daisy Sunshine",
+                text: "Surprise 6: May your week be filled with small wins, sweet moments, and warm coffee."
+            },
+            {
+                icon: "✨",
+                title: "Page 7: Sparkle & Bloom",
+                text: "Surprise 7: Don't forget to pause, take a deep breath, and smile today."
+            },
+            {
+                icon: "🎁",
+                title: "Page 8: Mystery Gift",
+                text: "Surprise 8: 🎟️ Redeemable Voucher: One free favorite treat or coffee from me anytime!"
+            },
+            {
+                icon: "💖",
+                title: "Page 9: Full Bloom",
+                text: "Surprise 9: Look how far you've come. The full pink bouquet is almost complete!"
+            },
+            {
+                icon: "👑",
+                title: "Page 10: Grand Bouquet",
+                text: "Surprise 10: You reached the end! You've unlocked the entire bouquet: 💐🌷🌹🌺🌸🌼. Have a wonderful day!"
+            }
+        ];
+
+        let currentPage = 0;
+
+        function nextPage() {
+            if (currentPage < pages.length - 1) {
+                currentPage++;
+                
+                document.getElementById('flowerIcon').innerText = pages[currentPage].icon;
+                document.getElementById('pageTitle').innerText = pages[currentPage].title;
+                document.getElementById('pageText').innerText = pages[currentPage].text;
+                document.getElementById('pageNumber').innerText = `Page ${currentPage + 1}/10`;
+
+                if (currentPage === pages.length - 1) {
+                    document.getElementById('nextBtn').innerText = "Replay Bouquet 🔄";
+                }
+            } else {
+                currentPage = 0;
+                document.getElementById('flowerIcon').innerText = pages[0].icon;
+                document.getElementById('pageTitle').innerText = pages[0].title;
+                document.getElementById('pageText').innerText = pages[0].text;
+                document.getElementById('pageNumber').innerText = `Page 1/10`;
+                document.getElementById('nextBtn').innerText = "Open Next Surprise 🌸";
+            }
+        }
+    </script>
+</body>
+</html>
