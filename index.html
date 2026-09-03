@@ -3,159 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pink Bouquet Surprises 🌸</title>
+    <title>For You 🌸</title>
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: #ffe6f0;
+            background-color: #fdf0f4;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            color: #4a2c3d;
+            color: #2c2c2c;
         }
 
         .container {
-            width: 90%;
-            max-width: 450px;
+            width: 88%;
+            max-width: 440px;
             background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2);
-            padding: 30px;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(216, 27, 96, 0.08);
+            padding: 35px 25px;
             text-align: center;
             position: relative;
-            border: 2px solid #ffb6c1;
+            border: 1px solid #f4c2d7;
         }
 
         .flower-icon {
-            font-size: 60px;
-            margin-bottom: 10px;
-            animation: bounce 2s infinite;
+            font-size: 55px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .flower-icon:hover {
+            transform: scale(1.08);
         }
 
         h2 {
-            color: #d81b60;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
+            color: #ad1457;
+            margin-bottom: 14px;
+            font-size: 1.35rem;
+            font-weight: 600;
+            letter-spacing: -0.3px;
         }
 
         p {
-            font-size: 1.05rem;
-            line-height: 1.5;
-            color: #666;
-            margin-bottom: 25px;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            color: #555555;
+            margin-bottom: 30px;
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .btn {
-            background-color: #ff69b4;
+            background-color: #d81b60;
             color: white;
             border: none;
-            padding: 12px 25px;
-            font-size: 1rem;
-            border-radius: 25px;
+            padding: 14px 28px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-radius: 30px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(255, 105, 180, 0.4);
+            transition: all 0.25s ease;
+            box-shadow: 0 6px 18px rgba(216, 27, 96, 0.25);
+            width: 80%;
         }
 
-        .btn:hover {
-            background-color: #ff1493;
-            transform: translateY(-2px);
-        }
-
-        .btn:disabled {
-            background-color: #ffd1dc;
-            cursor: not-allowed;
-            box-shadow: none;
+        .btn:active {
+            transform: scale(0.98);
         }
 
         .page-counter {
             position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 0.85rem;
-            color: #ff69b4;
-            font-weight: bold;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            top: 18px;
+            right: 22px;
+            font-size: 0.8rem;
+            color: #ad1457;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="page-counter" id="pageNumber">Page 1/10</div>
+        <div class="page-counter" id="pageNumber">01 / 10</div>
         <div class="flower-icon" id="flowerIcon">💐</div>
-        <h2 id="pageTitle">A Special Pink Bouquet</h2>
-        <p id="pageText">I put together a special bouquet of 10 pages just for you. Ready to explore the surprises inside?</p>
-        <button class="btn" id="nextBtn" onclick="nextPage()">Open Next Surprise 🌸</button>
+        <h2 id="pageTitle">A Bouquet For You</h2>
+        <p id="pageText">I put together a small 10-page collection specifically for you. Take your time reading through each page when you're ready.</p>
+        <button class="btn" id="nextBtn" onclick="nextPage()">Next Page →</button>
     </div>
 
     <script>
         const pages = [
             {
                 icon: "💐",
-                title: "Welcome to Your Bouquet",
-                text: "Every page in this digital bouquet holds a little surprise for you. Let's start picking the flowers!"
+                title: "A Bouquet For You",
+                text: "I put together a small 10-page collection specifically for you. Take your time reading through each page when you're ready."
             },
             {
                 icon: "🌷",
-                title: "Page 1: Fresh Tulips",
-                text: "Surprise 1: Hope your day is as bright and full of energy as a fresh pink tulip!"
+                title: "01. Soft Start",
+                text: "Starting off simple—gusto ko lang ipaalala sa'yo na 'wag mo masyadong i-stress ang sarili mo today. Take a quick break and breathe whenever things feel heavy."
             },
             {
                 icon: "🌹",
-                title: "Page 2: A Sweet Rose",
-                text: "Surprise 2: Here's a reminder that you're truly appreciated and thought of today."
+                title: "02. Appreciation",
+                text: "I really appreciate how consistent you are, lalo na sa mga maliliit na bagay. Thank you for always showing up as your genuine self."
             },
             {
                 icon: "🌺",
-                title: "Page 3: Hibiscus Magic",
-                text: "Surprise 3: 'Happiness blooms from within.' Keep shining bright!"
+                title: "03. Grace & Strength",
+                text: "You handle tough situations with a lot more grace than you realize. Minsan hindi mo napapansin, but you are actually doing amazing."
             },
             {
                 icon: "🌸",
-                title: "Page 4: Cherry Blossoms",
-                text: "Surprise 4: A little virtual hug wrapped in soft pink cherry blossom petals."
+                title: "04. Perspective",
+                text: "Don't rush the process at huwag ka masyadong mag-alala sa future. Slowly but surely, everything you are working on is coming together."
             },
             {
                 icon: "💌",
-                title: "Page 5: A Secret Note",
-                text: "Surprise 5: Halfway through! You deserve all the good things coming your way."
+                title: "05. Halfway Check",
+                text: "Just wanted to pause and check in on you right here. I hope you're having a genuine, peaceful, and low-stress day so far."
             },
             {
                 icon: "🌼",
-                title: "Page 6: Daisy Sunshine",
-                text: "Surprise 6: May your week be filled with small wins, sweet moments, and warm coffee."
+                title: "06. Peace of Mind",
+                text: "Prioritize your peace of mind over everything else today. Subukan mong mag-relax, grab a nice cup of coffee, and enjoy quiet moments."
             },
             {
                 icon: "✨",
-                title: "Page 7: Sparkle & Bloom",
-                text: "Surprise 7: Don't forget to pause, take a deep breath, and smile today."
+                title: "07. Presence",
+                text: "Your calm presence makes a huge difference to the people around you. Malaking bagay 'yung positivity at energy na dinadala mo araw-araw."
             },
             {
                 icon: "🎁",
-                title: "Page 8: Mystery Gift",
-                text: "Surprise 8: 🎟️ Redeemable Voucher: One free favorite treat or coffee from me anytime!"
+                title: "08. Small Treat",
+                text: "Here is a small gift card redeemable anytime you want. Your choice of favorite meal or coffee on me whenever free ka."
             },
             {
                 icon: "💖",
-                title: "Page 9: Full Bloom",
-                text: "Surprise 9: Look how far you've come. The full pink bouquet is almost complete!"
+                title: "09. Almost There",
+                text: "We are almost at the end of this digital bouquet deck. Sinadya kong ilagay ang pinakamahalagang note sa very last page."
             },
             {
-                icon: "👑",
-                title: "Page 10: Grand Bouquet",
-                text: "Surprise 10: You reached the end! You've unlocked the entire bouquet: 💐🌷🌹🌺🌸🌼. Have a wonderful day!"
+                icon: "💐",
+                title: "10. Happy Monthsary",
+                text: "Happy Monthsary! I am really grateful to have you around and to share these moments with you. Thank you for everything."
             }
         ];
 
@@ -168,18 +170,20 @@
                 document.getElementById('flowerIcon').innerText = pages[currentPage].icon;
                 document.getElementById('pageTitle').innerText = pages[currentPage].title;
                 document.getElementById('pageText').innerText = pages[currentPage].text;
-                document.getElementById('pageNumber').innerText = `Page ${currentPage + 1}/10`;
+                
+                let pageStr = currentPage + 1 < 10 ? `0${currentPage + 1}` : `${currentPage + 1}`;
+                document.getElementById('pageNumber').innerText = `${pageStr} / 10`;
 
                 if (currentPage === pages.length - 1) {
-                    document.getElementById('nextBtn').innerText = "Replay Bouquet 🔄";
+                    document.getElementById('nextBtn').innerText = "Start Over 🔄";
                 }
             } else {
                 currentPage = 0;
                 document.getElementById('flowerIcon').innerText = pages[0].icon;
                 document.getElementById('pageTitle').innerText = pages[0].title;
                 document.getElementById('pageText').innerText = pages[0].text;
-                document.getElementById('pageNumber').innerText = `Page 1/10`;
-                document.getElementById('nextBtn').innerText = "Open Next Surprise 🌸";
+                document.getElementById('pageNumber').innerText = `01 / 10`;
+                document.getElementById('nextBtn').innerText = "Next Page →";
             }
         }
     </script>
